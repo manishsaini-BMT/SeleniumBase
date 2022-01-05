@@ -17,9 +17,9 @@ from seleniumbase import extensions  # browser extensions storage folder
 
 urllib3.disable_warnings()
 selenium4 = False
-if sys.version_info[0] == 3 and sys.version_info[1] >= 7:
-    selenium4 = True
-    from selenium.webdriver.common.options import ArgOptions
+# if sys.version_info[0] == 3 and sys.version_info[1] >= 7:
+    # selenium4 = True
+    # from selenium.webdriver.common.options import ArgOptions
 
 DRIVER_DIR = os.path.dirname(os.path.realpath(drivers.__file__))
 # Make sure that the SeleniumBase DRIVER_DIR is at the top of the System PATH

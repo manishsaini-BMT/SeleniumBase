@@ -297,6 +297,9 @@ def _set_chrome_options(
         "profile.default_content_settings.popups": 0,
         "profile.managed_default_content_settings.popups": 0,
         "profile.default_content_setting_values.automatic_downloads": 1,
+        "profile.default_content_setting_values.media_stream_mic": 1, 
+        "profile.default_content_setting_values.media_stream_camera": 1,
+        "profile.default_content_setting_values.geolocation": 1
     }
     if locale_code:
         prefs["intl.accept_languages"] = locale_code
@@ -419,6 +422,8 @@ def _set_chrome_options(
     chrome_options.add_argument("--dom-automation")
     chrome_options.add_argument("--disable-hang-monitor")
     chrome_options.add_argument("--disable-prompt-on-repost")
+    chrome_options.add_argument("--use-fake-ui-for-media-stream")
+    chrome_options.add_argument("--use-fake-device-for-media-stream")
     if servername != "localhost":
         use_auto_ext = True  # Use Automation Extension with the Selenium Grid
     if not use_auto_ext:  # Disable Automation Extension / detection. (Default)
